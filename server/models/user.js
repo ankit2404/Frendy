@@ -38,6 +38,8 @@ const userSchema = new mongoose.Schema({
     },
     imageAbsolutePath:{
         type: String,
+        default:null,
+        // required:true,
     },
     pincode:{
         type: Number,

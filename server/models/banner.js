@@ -2,18 +2,36 @@ const mongoose = require('mongoose');
 
 const bannerSchema = new mongoose.Schema({
 
-    name:{
+    festivalName:{
         type: String,
         required:true,
     },
-    img_url:{
+    imageName:{
         type: String,
         required:true,
     },
-    identifier:{
+    imageAbsolutePath:{
+        type: String,
+        // required:true,
+    },    
+    imageUrl:{
         type: String,
         required:true,
     },
+    imgBase64:{
+        type: String,
+        // required:true,
+    },
+    type:{
+        type: String,
+        required:true,
+    },
+    videoUrl:{
+        type: String,
+        default:null,
+        // required:true,
+    }
+    
 
  
 }, {
