@@ -1,1 +1,3 @@
-this is server area
+model data : user -> name , number , address , city , state , avatar , pincode , email , gender 
+      banner -> name , img-url , identifier
+
