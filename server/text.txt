@@ -1,3 +1,84 @@
 model data : user -> name , number , address , city , state , avatar , pincode , email , gender 
       banner -> name , img-url , identifier
 
+api sample data 
+      banner:
+{    
+displayField: "{\"isNameShown\":{\"FromTop\":\"560\",\"boolean\":true,\"FromLeft\":\"50\",\"TextColor\":\"#DB1010\"},\"isAddressShown\":{\"FromTop\":\"625\",\"boolean\":true,\"FromLeft\":\"15\",\"TextColor\":\"#DB1010\"},\"isMobileNumberShown\":{\"FromTop\":\"975\",\"boolean\":true,\"FromLeft\":\"110\",\"TextColor\":\"#DB1010\"},\"isProfileImageShown\":{\"FromTop\":null,\"boolean\":false,\"FromLeft\":null,\"TextColor\":null,\"ImageWidth\":null,\"ImageHeight\":null}}"
+festivalName: "Thank You"
+id: 119
+imageAbsolutePath: "https://cdn2-ahmedabad-staging.frendy.in/creativeBanner/WhatsApp Image 2020-07-15 at 6.53.19 PM(1).jpeg"
+imageName: "Mannu testing"
+imageUrl: "creativeBanner/WhatsApp Image 2020-07-15 at 6.53.19 PM(1).jpeg"
+imgBase64: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAA
+type: "ThankYou"
+videoUrl: null
+}
+
+user data: {
+IsMitra: false
+OtpForDelivery: null
+accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI3MDczNjAxODU0IiwiaWQiOjM1MTQsImZpcnN0TmFtZSI6Im1vaGl0IiwibGFzdE5hbWUiOiJQYXJ0bmVyIiwicGluY29kZSI6IjM4MDAxNSIsImNpdHkiOiJBaG1lZGFiYWQiLCJjaXR5TmFtZSI6IkFobWVkYWJhZCIsInN0YXRlIjoiR3VqYXJhdCIsImFyZWEiOiJQcmFobGFkbmFnYXIiLCJhZGRyZXNzIjoiQm9wYWwgU291dGgiLCJkZWxpdmVyeURheXMiOiJUdWVzZGF5LE1vbmRheSxXZWRuZXNkYXksVGh1cnNkYXkiLCJmbG8iOiJub3YyNyIsInR5cGUiOiJQYXJ0bmVyIiwiaWF0IjoxNjUzMjk0NzEwLCJleHAiOjE2ODQ4MzA3MTB9.nwLv4e9VPjpr1wkTtQ5NWbbBbWCtN2RAjPbCDq2AuaQ"
+address: "Bopal South"
+allowedExtended: true
+area: "Prahladnagar"
+areaId: 41
+building: "Arcade"
+cityId: 1314
+cityName: "Ahmedabad"
+createdAt: "2022-05-13 17:48:26"
+deliveryDays: "Tuesday,Monday,Wednesday,Thursday"
+directDeliveryToCustomer: false
+dostAssociationDate: "2022-05-13 17:48:26"
+email: "mohit@gmail.com"
+emailVerifiedAt: "2022-05-13 17:48:26"
+firstName: "mohit"
+gender: "Male"
+gstin: null
+id: 3514
+imageAbsolutePath: null
+lastName: "Partner"
+latitude: null
+longitude: null
+mobile: "7073601854"
+name: "mohit Partner"
+parentType: "Hub"
+partnerId: 2325
+partnerType: "Partner"
+password: null
+path: ".2325.3514."
+paymentMode: "Cash Or Online"
+pincode: "380015"
+profileImage: null
+stateId: 7
+stateName: "Gujarat"
+status: "Active"
+timeSlot: "10:00AM-12:30PM"
+token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtb2JpbGUiOiI3MDczNjAxODU0IiwiaWQiOjM1MTQsImZpcnN0TmFtZSI6Im1vaGl0IiwibGFzdE5hbWUiOiJQYXJ0bmVyIiwicGluY29kZSI6IjM4MDAxNSIsImNpdHkiOiJBaG1lZGFiYWQiLCJjaXR5TmFtZSI6IkFobWVkYWJhZCIsInN0YXRlIjoiR3VqYXJhdCIsImFyZWEiOiJQcmFobGFkbmFnYXIiLCJhZGRyZXNzIjoiQm9wYWwgU291dGgiLCJkZWxpdmVyeURheXMiOiJUdWVzZGF5LE1vbmRheSxXZWRuZXNkYXksVGh1cnNkYXkiLCJmbG8iOiJub3YyNyIsInR5cGUiOiJQYXJ0bmVyIiwiaWF0IjoxNjUzMjk0NzEwLCJleHAiOjE2ODQ4MzA3MTB9.nwLv4e9VPjpr1wkTtQ5NWbbBbWCtN2RAjPbCDq2AuaQ"
+updatedAt: "2022-05-23 14:01:50"
+vAccountId: null
+vaInfo: null
+virtualVpaId: null
+walletAmount: 0
+walletCreatedAt: null
+warehouseId: 4
+warehouseInfo: {,…}
+warehouse: {id: 4, code: "Hub1", email: null, mobile: "9316733030", status: "Active", city_id: null,…}
+city_id: null
+code: "Hub1"
+company: null
+email: null
+first_name: "Areli Ahmedabad"
+id: 4
+last_name: null
+mobile: "9316733030"
+partnerAssociationAt: null
+partnerId: 2325
+partnerInfo: {id: 2325, area: "Prahladnagar", path: ".2325.", email: "hub1partner@frendy.in", gstin: null,…}
+state_id: 7
+status: "Active"
+user_type: "warehouse"
+wallet_id: null
+zoneId: 5
+zoneName: "West Central"
+}

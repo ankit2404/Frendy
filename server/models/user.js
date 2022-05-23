@@ -13,23 +13,31 @@ const userSchema = new mongoose.Schema({
     },
     number: {
         type: String,
-        required: true
+        required: true,
+        unique:true,
     },
     address:{
         type: String,
         required:true,
     }, 
-    city:{
+    area:{
+        type: String,
+        required:true,
+    },
+    cityName:{
         type: String,
         required:true,
     }, 
+    cityId:{
+        type: Number,
+        required:true,
+    },
     state:{
         type: String,
         required:true,
     },
-    avatar:{
+    imageAbsolutePath:{
         type: String,
-        required:true,
     },
     pincode:{
         type: Number,

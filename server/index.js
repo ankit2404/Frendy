@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const db = require('./config/mongoose');
 const env = require('./config/environment');
 
-
+app.use(express.urlencoded({extended:true}));
 app.use('/', require('./routes/index'));
 
 app.listen(port,function(error){
