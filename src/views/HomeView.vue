@@ -15,29 +15,39 @@
 
     <v-navigation-drawer v-model="drawer" fixed temporary>
     </v-navigation-drawer>
-    <v-row justify="center" class="mt-1">
+    <v-row justify="center" style="margin: 0; position: fixed; width: 100%;">
         <v-expansion-panels accordion>
             <v-expansion-panel>
                 <v-expansion-panel-header expand-icon="" class="text-decoration-underline font-weight-black subtitle-1">
                     Creative Settings
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
-                  <div class="d-flex flex-wrap justify-space-between align-center">
+                    <div class="d-flex flex-wrap justify-space-between align-center">
 
-                    <v-switch :label="`Your Name`" v-model="switch1"></v-switch>
-                    <v-switch :label="`Your Number`" v-model="switch2"></v-switch>
-                    <v-switch :label="`Your Phone`" v-model="switch4"></v-switch>
-                    <v-switch :label="`Your Address`" v-model="switch3"></v-switch>
-                  </div>
+                        <v-switch :label="`Your Name`" v-model="switch1"></v-switch>
+                        <v-switch :label="`Your Number`" v-model="switch2"></v-switch>
+                        <v-switch :label="`Your Phone`" v-model="switch4"></v-switch>
+                        <v-switch :label="`Your Address`" v-model="switch3"></v-switch>
+                    </div>
 
                 </v-expansion-panel-content>
+                <v-divider style="width:95%; margin: auto; background-color: black; "></v-divider>
+                <div class="pl-2 pr-2">
+                    <v-card class="mx-auto" max-width="344">
+                        <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px">
+                            <div class="my-2">
+                                <v-btn color="warning" dark>
+                                    Greetings
+                                </v-btn>
+                            </div>
+                        </v-img>
+                    </v-card>
+                </div>
             </v-expansion-panel>
         </v-expansion-panels>
     </v-row>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, repellendus quos, dolorem inventore fugit nulla blanditiis praesentium consectetur ullam officia, obcaecati sint dolores iure illo labore ipsa quidem assumenda ipsum?
-    
-</v-app>
 
+</v-app>
 </template>
 
 <script>
