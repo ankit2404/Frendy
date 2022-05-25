@@ -17,7 +17,7 @@
     </v-navigation-drawer>
     <v-row justify="center" class="mt-1">
         <v-expansion-panels accordion>
-            <v-expansion-panel>
+            <v-expansion-panel style="height:auto " >
                 <v-expansion-panel-header expand-icon="" class="text-decoration-underline font-weight-black subtitle-1">
                     Creative Settings
                 </v-expansion-panel-header>
@@ -34,7 +34,6 @@
             </v-expansion-panel>
         </v-expansion-panels>
     </v-row>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, repellendus quos, dolorem inventore fugit nulla blanditiis praesentium consectetur ullam officia, obcaecati sint dolores iure illo labore ipsa quidem assumenda ipsum?
     
 </v-app>
 
