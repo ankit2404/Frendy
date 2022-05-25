@@ -6,6 +6,7 @@ router.get('/', function(req,res){
     return res.end('hello this is Bond');
 });
 router.post('/create',bannerController.banner_create);
+router.post('/create-img',bannerController.banner_create_image);
 router.get('/show',bannerController.banner_list);
 
 
