@@ -1,0 +1,15 @@
+.on_off_button {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center !important;
+    height: 1.1em;
+    font-weight: 800;
+}
+.main_cont{
+    position: sticky;
+    top: 50px !important;
+    z-index: 2;
+    background-color: white;
+    width: 100%;
+}
