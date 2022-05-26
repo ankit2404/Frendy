@@ -52,8 +52,8 @@
         <v-card flat class="d-flex justify-start">
             <Icon icon="bi:cart-check" width="46" height="46" color='#ffffff' style="border: 8px solid #8E24AA; background-color: #8E24AA; border-radius: 50%;" class="ml-5 mt-3" />
             <v-card flat class="ml-4 mt-2">
-                <p style="color:#8E24AA" class=" font-weight-bold title font-italic mb-0">Language: en</p>
-                <p style="color:#8E24AA" class=" font-weight-bold caption font-italic">Select from Hindi, English or Gujrati</p>
+                <p style="color:#8E24AA" class=" font-weight-bold title font-italic mb-0">My Orders</p>
+                <p style="color:#8E24AA" class=" font-weight-bold caption font-italic">Find your recent order here</p>
             </v-card>
         </v-card>
     </v-card>
@@ -61,8 +61,8 @@
         <v-card flat class="d-flex justify-start">
             <Icon icon="gg:profile" width="46" height="46" color='#ffffff' style="border: 8px solid #8E24AA; background-color: #8E24AA; border-radius: 50%;" class="ml-5 mt-3" />
             <v-card flat class="ml-4 mt-2">
-                <p style="color:#8E24AA" class=" font-weight-bold title font-italic mb-0">Language: en</p>
-                <p style="color:#8E24AA" class=" font-weight-bold caption font-italic">Select from Hindi, English or Gujrati</p>
+                <p style="color:#8E24AA" class=" font-weight-bold title font-italic mb-0">My Profile</p>
+                <p style="color:#8E24AA" class=" font-weight-bold caption font-italic">Check your personal details</p>
             </v-card>
         </v-card>
     </v-card>
@@ -70,8 +70,8 @@
         <v-card flat class="d-flex justify-start">
             <Icon icon="bxs:heart-circle" width="46" height="46" color='#ffffff' style="border: 8px solid #8E24AA; background-color: #8E24AA; border-radius: 50%;" class="ml-5 mt-3" />
             <v-card flat class="ml-4 mt-2">
-                <p style="color:#8E24AA" class=" font-weight-bold title font-italic mb-0">Language: en</p>
-                <p style="color:#8E24AA" class=" font-weight-bold caption font-italic">Select from Hindi, English or Gujrati</p>
+                <p style="color:#8E24AA" class=" font-weight-bold title font-italic mb-0">My WishList</p>
+                <p style="color:#8E24AA" class=" font-weight-bold caption font-italic">You can find your favourite here</p>
             </v-card>
         </v-card>
     </v-card>
@@ -79,7 +79,7 @@
         <v-card flat class="d-flex justify-start">
             <Icon icon="akar-icons:location" width="46" height="46" color='#ffffff' style="border: 8px solid #8E24AA; background-color: #8E24AA; border-radius: 50%;" class="ml-5 mt-3" />
             <v-card flat class="ml-4 mt-2">
-                <p style="color:#8E24AA" class=" font-weight-bold title font-italic mb-0">Language: en</p>
+                <p style="color:#8E24AA" class=" font-weight-bold title font-italic mb-0">Location</p>
                 <p style="color:#8E24AA" class=" font-weight-bold caption font-italic">Select from Hindi, English or Gujrati</p>
             </v-card>
         </v-card>
