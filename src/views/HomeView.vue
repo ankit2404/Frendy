@@ -23,7 +23,7 @@
                             Creative Settings
                         </v-expansion-panel-header>
                         <v-expansion-panel-content class="my-0">
-                            <div class="d-flex flex-wrap justify-space-between align-center my-0 py-0">
+                            <div class="d-flex flex-wrap align-center my-0 py-0">
                                 <v-switch :label="`Your Name`" v-model="switch1" class="on_off_button" @click="change1"></v-switch>
                                 <v-switch :label="`Your Number`" v-model="switch2" class="on_off_button" @click="change2"></v-switch>
                                 <v-switch :label="`Your Photo`" v-model="switch4" class="on_off_button" @click="change4"></v-switch>
@@ -39,23 +39,24 @@
                             <div>
                                 <div class="pl-2 pr-2">
                                     <v-card class="mx-auto" max-width="344">
-                                        <v-img src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" height="200px">
+                                        <v-img src="https://img.freepik.com/free-vector/dark-hexagonal-background-with-gradient-color_79603-1409.jpg?w=2000" height="200px">
                                             <div style="position: relative; top: 70%;" class="d-flex">
-                                                <v-avatar class="ml-2">
-                                                    <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
+                                                <v-avatar class="ml-2" v-if="switch4">
+                                                    <img  src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
                                                 </v-avatar>
-                                                <div style="width: 75%; " class="ml-2">
-                                                    <div class="pl-3 mb-0" style="background-color: #D3D3D3; height: auto">
-                                                        <p class="body-2 text-decoration-underline font-weight-black my-0 ">{{switch1 ?val.name.toUpperCase() : ""}}</p>
-                                                        <p class=" my-0" style="font-size:0.7em ;">{{switch2 ?val.number : ""}}</p>
-                                                        <p class=" my-0" style="font-size:0.7em ;">{{switch3?val.area: ""}} {{switch3 ? val.state:""}} {{ switch3 ? val.pincode: ""}}</p>
+                                                <v-avatar class="ml-2" v-else></v-avatar>
+                                                <div style="width: 75%; background-color: #ffffff " class="ml-2"  v-if="switch1 || switch2 || switch3">
+                                                    <div class="pl-3 mb-0">
+                                                        <p class="body-2 text-decoration-underline font-weight-black my-0" v-if="switch1">{{val.name.toUpperCase()}}</p>
+                                                        <p class=" my-0" style="font-size:0.7em ;" v-if="switch2">{{val.number}}</p>
+                                                        <p class=" my-0" style="font-size:0.7em ;" v-if="switch3">{{val.area}} {{val.state}} {{ val.pincode}}</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </v-img>
                                     </v-card>
                                 </div>
-                                <WhatsappButton/>
+                                <WhatsappButton />
                             </div>
 
                         </li>
@@ -69,7 +70,6 @@
 </template>
 
 <script>
-
 import '../style/style.css'
 import WhatsappButton from '../components/WhatsappButton.vue'
 export default {
