@@ -29,12 +29,13 @@
                                 <v-switch :label="`Your Photo`" v-model="switch4" class="on_off_button" @click="change4"></v-switch>
                                 <v-switch :label="`Your Address`" v-model="switch3" class="on_off_button" @click="!switch3"></v-switch>
                             </div>
-
+                            <!-- <span>{{ this.$route.params.id }}</span> -->
                         </v-expansion-panel-content>
                     </div>
                     <v-divider style="width:95%; margin: auto; background-color: black; margin-bottom: 10px;"></v-divider>
                     <div style="overflow-y: scroll; ">
-                        <li v-for="(val, index) in users">
+                    
+                        <li v-for="(val, index) in users" :key = "index">
 
                             <div>
                                 <div class="pl-2 pr-2">
@@ -42,7 +43,7 @@
                                         <v-img src="https://img.freepik.com/free-vector/dark-hexagonal-background-with-gradient-color_79603-1409.jpg?w=2000" height="200px">
                                             <div style="position: relative; top: 70%;" class="d-flex">
                                                 <v-avatar class="ml-2" v-if="switch4">
-                                                    <img  src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
+                                                    <img  :src= "prefilUrl + val.imageAbsolutePath"  alt="John">
                                                 </v-avatar>
                                                 <v-avatar class="ml-2" v-else></v-avatar>
                                                 <div style="width: 75%; background-color: #ffffff " class="ml-2"  v-if="switch1 || switch2 || switch3">
@@ -70,29 +71,34 @@
 </template>
 
 <script>
+
 import '../style/style.css'
 import WhatsappButton from '../components/WhatsappButton.vue'
+
 export default {
     name: 'HomeView',
-
+    
     data: () => ({
         drawer: null,
         switch1: true,
         switch2: true,
         switch3: true,
         switch4: true,
-        users: null
+        users: null,
+        prefilUrl : "http://localhost:8008/",
+        bannerName: null,
     }),
     components: {
         WhatsappButton
     },
 
     async mounted() {
-        const response = await fetch("http://localhost:8008/api/v1/user/all-user-data")
+        this.bannerName = this.$route.params.id
+        const response = await fetch(`http://localhost:8008/api/v1/banner/show/${this.bannerName}`)
+        console.log(response)
         let kk = await response.json()
         this.users = kk.data
     },
-
     methods: {
         change1(event) {
             !this.switch1
