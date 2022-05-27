@@ -3,7 +3,7 @@
 const Banner = require('../../models/banner');
 const multer = require('multer');
 const sharp = require('sharp');
-const { response } = require('express');
+const express = require('express');
 
 
 
@@ -107,13 +107,14 @@ exports.uploadUserPhoto = upload.single('photo');
 exports.resizeUserPhoto = async (req, res, next) => {
   if (!req.file) return next();
   // file name of file
-  req.file.filename = `user-mohit-pagal-j.jpeg`;
+  let temp_name =  'Banner-' + Date.now();
 
+  req.file.filename = `${temp_name}.jpeg`;
   await sharp(req.file.buffer)
     .resize(500, 500)
     .toFormat('jpeg')
     .jpeg({ quality: 90 })
-    .toFile(`upload/${req.file.filename}`);
+    .toFile(`upload/banner/${req.file.filename}`);
 
   next();
 };
@@ -130,10 +131,11 @@ module.exports.banner_create_image = async function(req,res){
         videoUrl:req.body.videoUrl,
     })
   if (req.file) {
-    new_banner.imageUrl = req.file.filename;
+    new_banner.imageUrl = `upload/banner/${req.file.filename}`;
   }
 
   console.log(new_banner)
   return res.send(new_banner)
 
 }
+//req.params.key 

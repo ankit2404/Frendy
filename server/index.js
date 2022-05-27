@@ -8,6 +8,9 @@ const env = require('./config/environment');
 
 app.use(cors())
 app.use(express.urlencoded({extended:true}));
+// app.use('/upload',require('./upload'));
+
+app.use('/upload', express.static(__dirname + "/upload"));
 app.use('/', require('./routes/index'));
 
 
