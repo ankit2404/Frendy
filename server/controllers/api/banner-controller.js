@@ -6,13 +6,12 @@ const sharp = require('sharp');
 const express = require('express');
 
 
-
 module.exports.banner_create = async function(req,res){
     try {
         let new_banner = await Banner.create({
             festivalName:req.body.festivalName,
             imageName:req.body.imageName,
-            imageAbsolutePath:req.body.imageAbsolutePath,    
+            imageAbsolutePath:req.body.imageAbsolutePath,
             imageUrl:req.body.imageUrl,
             imgBase64:req.body.imgBase64,
             type:req.body.type,
@@ -132,6 +131,7 @@ module.exports.banner_create_image = async function(req,res){
     })
   if (req.file) {
     new_banner.imageUrl = `upload/banner/${req.file.filename}`;
+    new_banner.save();
   }
 
   console.log(new_banner)

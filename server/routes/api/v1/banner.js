@@ -13,6 +13,7 @@ router.post(
   bannerController.banner_create_image
 );
 router.get("/show", bannerController.banner_list);
+// router.get('')
 
 
 module.exports = router;
