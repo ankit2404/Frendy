@@ -9,7 +9,7 @@
                 <v-icon large>
                     mdi-chevron-left
                 </v-icon>
-                Back
+                Greetings
             </v-toolbar-title>
         </v-app-bar>
 
@@ -33,33 +33,20 @@
                         </v-expansion-panel-content>
                     </div>
                     <v-divider style="width:95%; margin: auto; background-color: black; margin-bottom: 10px;"></v-divider>
-                    <div style="overflow-y: scroll; ">
-                        <li v-for="(val, index) in users">
+                    <div style="overflow-y: scroll; " class="d-flex flex-wrap" >
+                        <div v-for="(val, index) in users" class="pl-2 pr-2 pb-5" style="width: 50%; border-radius: 20px;">
 
-                            <div>
-                                <div class="pl-2 pr-2">
-                                    <v-card class="mx-auto">
+                                    <v-card class="d-flex flex-wrap justify-center" >
                                         <v-img src="https://img.freepik.com/free-vector/dark-hexagonal-background-with-gradient-color_79603-1409.jpg?w=2000" height="200px">
                                             <div style="position: relative; top: 70%;" class="d-flex">
-                                                <v-avatar class="ml-2" v-if="switch4">
-                                                    <img  src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
-                                                </v-avatar>
-                                                <v-avatar class="ml-2" v-else></v-avatar>
-                                                <div style="width: 75%; background-color: #ffffff " class="ml-2"  v-if="switch1 || switch2 || switch3">
-                                                    <div class="pl-3 mb-0">
-                                                        <p class="body-2 text-decoration-underline font-weight-black my-0" v-if="switch1">{{val.name.toUpperCase()}}</p>
-                                                        <p class=" my-0" style="font-size:0.7em ;" v-if="switch2">{{val.number}}</p>
-                                                        <p class=" my-0" style="font-size:0.7em ;" v-if="switch3">{{val.area}} {{val.state}} {{ val.pincode}}</p>
-                                                    </div>
-                                                </div>
+                                                <v-btn color="warning" dark class="mx-auto" style="width: 85%;">
+                                                    Normal 
+                                                </v-btn>
                                             </div>
                                         </v-img>
                                     </v-card>
-                                </div>
-                                <WhatsappButton />
-                            </div>
-
-                        </li>
+                                
+                        </div>
                     </div>
                 </v-expansion-panel>
             </v-expansion-panels>
@@ -71,10 +58,8 @@
 
 <script>
 import '../style/style.css'
-import WhatsappButton from '../components/WhatsappButton.vue'
 export default {
-    name: 'HomeView',
-
+    name: 'Creative',
     data: () => ({
         drawer: null,
         switch1: true,
@@ -84,7 +69,7 @@ export default {
         users: null
     }),
     components: {
-        WhatsappButton
+
     },
 
     async mounted() {

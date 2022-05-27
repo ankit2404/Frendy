@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
+import CreativeView from '../views/Creative.vue'
 import Account from '../components/Account.vue'
+import Category from '../components/Category.vue'
 
 Vue.use(VueRouter)
 
@@ -13,14 +14,19 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    component: AboutView
+    path: '/creative',
+    name: 'creative',
+    component: CreativeView
   },
   {
     path: '/account',
     name: 'account',
     component: Account
+  },
+  {
+    path: '/category',
+    name: 'category',
+    component: Category
   }
 ]
 

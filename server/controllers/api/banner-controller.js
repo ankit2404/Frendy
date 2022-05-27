@@ -107,7 +107,7 @@ exports.uploadUserPhoto = upload.single('photo');
 exports.resizeUserPhoto = async (req, res, next) => {
   if (!req.file) return next();
   // file name of file
-  req.file.filename = `user-mohit-pagal-j.jpeg`;
+  req.file.filename = `user-image-upload.jpeg`;
 
   await sharp(req.file.buffer)
     .resize(500, 500)
