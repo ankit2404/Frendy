@@ -102,9 +102,9 @@ const upload = multer({
   fileFilter: multerFilter
 });
 
-exports.uploadUserPhoto = upload.single('photo');
+exports.uploadBannerPhoto = upload.single('photo');
 
-exports.resizeUserPhoto = async (req, res, next) => {
+exports.resizeBannerPhoto = async (req, res, next) => {
   if (!req.file) return next();
   // file name of file
   let temp_name =  'Banner-' + Date.now();

@@ -77,7 +77,9 @@ module.exports.create_user = async function(req,res){
             console.log(req.file);
             if (req.file) {
                 user.imageAbsolutePath =  `upload/user/avatar/${req.file.filename}`;
+                user.save();
             }
+
 
             console.log(user);
             return res.status(200).json({
