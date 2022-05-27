@@ -18,7 +18,7 @@
         <v-row justify="center" style="margin: 0;  width: 100%;">
             <v-expansion-panels accordion>
                 <v-expansion-panel style="position: relative;">
-                    <div class="main_cont">
+                    <!-- <div class="main_cont">
                         <v-expansion-panel-header expand-icon="" class="text-decoration-underline font-weight-black subtitle-1">
                             Creative Settings
                         </v-expansion-panel-header>
@@ -31,7 +31,7 @@
                             </div>
 
                         </v-expansion-panel-content>
-                    </div>
+                    </div> -->
                     <v-divider style="width:95%; margin: auto; background-color: black; margin-bottom: 10px;"></v-divider>
                     <div style="overflow-y: scroll; " class="d-flex flex-wrap">
                         <div class="pl-2 pr-2 pb-5" style="width: 50%; border-radius: 20px;">

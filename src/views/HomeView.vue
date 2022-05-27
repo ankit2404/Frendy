@@ -6,7 +6,7 @@
             <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
             <v-toolbar-title>
-                <v-icon large>
+                <v-icon large @click="$router.push('/')">
                     mdi-chevron-left
                 </v-icon>
                 Back
