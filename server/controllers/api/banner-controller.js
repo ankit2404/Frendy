@@ -72,10 +72,25 @@ module.exports.banner_create = async function(req,res){
 module.exports.banner_list = async function(req,res){
     try {
 
-        let data = await Banner.find();
+        // let data = await Banner.find();
+        // return res.status(200).json({
+        //     data:data,
+        // });
+        let type_array = req.params.type || null ;
+
+        let data = await Banner.aggregate([
+          {
+            '$match': {
+              'type': type_array
+            }
+          }
+        ]);
+
         return res.status(200).json({
             data:data,
         });
+
+
     
     } catch (error) {
         res.status(501).json({
