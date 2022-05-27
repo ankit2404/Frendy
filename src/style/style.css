@@ -1,3 +1,5 @@
+
+
 .on_off_button {
     display: flex !important;
     justify-content: center;
@@ -7,10 +9,19 @@
     font-weight: 800;
     flex: 50% !important;
 }
+
 .main_cont{
     position: sticky;
     top: 50px !important;
     z-index: 2;
     background-color: white;
     width: 100%;
+}
+
+
+.search{
+    background-color:antiquewhite;
+    display: grid;
+    grid-template-columns: auto 15px;
+
 }

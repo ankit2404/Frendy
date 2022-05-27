@@ -9,7 +9,7 @@
     </div>
     <div class="d-flex flex-column ml-auto mr-auto" style="border: 4px solid #00C853; width: 90%;">
 
-        <p class="justify-center font-weight-bold text-decoration-underline ml-auto mr-auto" style="color: #00C853
+        <p class="justify-center font-weight-bold text-decoration-underline ml-auto mr-auto mt-3" style="color: #00C853
 ;">Partner Komal</p>
         <v-card class="d-flex justify-space-around mb-1" flat >
             <v-row class="text-center">
