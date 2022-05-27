@@ -37,7 +37,7 @@
                         <div class="pl-2 pr-2 pb-5" style="width: 50%; border-radius: 20px;">
 
                             <v-card class="d-flex flex-wrap justify-center">
-                                <v-img src="https://img.freepik.com/free-vector/dark-hexagonal-background-with-gradient-color_79603-1409.jpg?w=2000" height="200px">
+                                <v-img src="https://media.istockphoto.com/vectors/season-greetings-white-calligraphy-phrase-vector-illustration-vector-id1186450816?k=20&m=1186450816&s=612x612&w=0&h=ElJx_OQXInDTQTCjn0k7WHYy2aPK57b07TGvM1kA1-c=" height="200px">
                                     <div style="position: relative; top: 70%;" class="d-flex">
                                         <v-btn color="warning" @click="$router.push('/creative/greetings')" dark class="mx-auto" style="width: 85%;">
                                             Greetings
@@ -50,7 +50,7 @@
                         <div class="pl-2 pr-2 pb-5" style="width: 50%; border-radius: 20px;">
 
                             <v-card class="d-flex flex-wrap justify-center">
-                                <v-img src="https://img.freepik.com/free-vector/dark-hexagonal-background-with-gradient-color_79603-1409.jpg?w=2000" height="200px">
+                                <v-img src="https://cdn.xxl.thumbs.canstockphoto.com/promotions-in-job-or-product-sales-promotion-stock-illustrations_csp22578073.jpg" height="200px">
                                     <div style="position: relative; top: 70%;" class="d-flex">
                                         <v-btn @click="$router.push('/creative/promotion')" color="warning" dark class="mx-auto" style="width: 85%;">
                                             Promotion
@@ -63,7 +63,7 @@
                         <div class="pl-2 pr-2 pb-5" style="width: 50%; border-radius: 20px;">
 
                             <v-card class="d-flex flex-wrap justify-center">
-                                <v-img src="https://img.freepik.com/free-vector/dark-hexagonal-background-with-gradient-color_79603-1409.jpg?w=2000" height="200px">
+                                <v-img src="https://www.redpixels.in/wp-content/uploads/Die-cut-business-card-redpixel.jpg" height="200px">
                                     <div style="position: relative; top: 70%;" class="d-flex">
                                         <v-btn @click="$router.push('/creative/visitingcard')" color="warning" dark class="mx-auto" style="width: 85%;">
                                             Visiting Card
@@ -76,7 +76,7 @@
                         <div class="pl-2 pr-2 pb-5" style="width: 50%; border-radius: 20px;">
 
                             <v-card class="d-flex flex-wrap justify-center">
-                                <v-img src="https://img.freepik.com/free-vector/dark-hexagonal-background-with-gradient-color_79603-1409.jpg?w=2000" height="200px">
+                                <v-img src="https://www.sanjayjangam.com/wp-content/uploads/2021/10/good-morning-images.jpg" height="200px">
                                     <div style="position: relative; top: 70%;" class="d-flex">
 
                                         <v-btn @click="$router.push('/creative/goodmorning')" color="warning" dark class="mx-auto" style="width: 85%;">

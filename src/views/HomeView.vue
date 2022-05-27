@@ -29,28 +29,27 @@
                                 <v-switch :label="`Your Photo`" v-model="switch4" class="on_off_button" @click="change4"></v-switch>
                                 <v-switch :label="`Your Address`" v-model="switch3" class="on_off_button" @click="!switch3"></v-switch>
                             </div>
-                            <!-- <span>{{ this.$route.params.id }}</span> -->
                         </v-expansion-panel-content>
                     </div>
                     <v-divider style="width:95%; margin: auto; background-color: black; margin-bottom: 10px;"></v-divider>
                     <div style="overflow-y: scroll; ">
                     
-                        <li v-for="(val, index) in users" :key = "index">
+                        <li v-for="(val, index) in banners" :key = "index">
 
                             <div>
                                 <div class="pl-2 pr-2">
                                     <v-card class="mx-auto">
-                                        <v-img src="https://img.freepik.com/free-vector/dark-hexagonal-background-with-gradient-color_79603-1409.jpg?w=2000" height="200px">
+                                        <v-img :src = "prefilUrl + val.imageUrl" height="200px">
                                             <div style="position: relative; top: 70%;" class="d-flex">
                                                 <v-avatar class="ml-2" v-if="switch4">
-                                                    <img  :src= "prefilUrl + val.imageAbsolutePath"  alt="John">
+                                                    <img  :src= "prefilUrl + user.imageAbsolutePath"  alt="John">
                                                 </v-avatar>
                                                 <v-avatar class="ml-2" v-else></v-avatar>
                                                 <div style="width: 75%; background-color: #ffffff " class="ml-2"  v-if="switch1 || switch2 || switch3">
                                                     <div class="pl-3 mb-0">
-                                                        <p class="body-2 text-decoration-underline font-weight-black my-0" v-if="switch1">{{val.name.toUpperCase()}}</p>
-                                                        <p class=" my-0" style="font-size:0.7em ;" v-if="switch2">{{val.number}}</p>
-                                                        <p class=" my-0" style="font-size:0.7em ;" v-if="switch3">{{val.area}} {{val.state}} {{ val.pincode}}</p>
+                                                        <p class="body-2 text-decoration-underline font-weight-black my-0" v-if="switch1">{{user.name}}</p>
+                                                        <p class=" my-0" style="font-size:0.7em ;" v-if="switch2">{{user.number}}</p>
+                                                        <p class=" my-0" style="font-size:0.7em ;" v-if="switch3">{{user.area}} {{user.cityName}} {{user.state}}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -84,9 +83,10 @@ export default {
         switch2: true,
         switch3: true,
         switch4: true,
-        users: null,
+        banners: null,
         prefilUrl : "http://localhost:8008/",
         bannerName: null,
+        user: null,
     }),
     components: {
         WhatsappButton
@@ -94,10 +94,13 @@ export default {
 
     async mounted() {
         this.bannerName = this.$route.params.id
+        const res = await fetch('http://localhost:8008/api/v1/user/get-user')
+        const ak = await res.json();
+        this.user = ak.data
         const response = await fetch(`http://localhost:8008/api/v1/banner/show/${this.bannerName}`)
-        console.log(response)
         let kk = await response.json()
-        this.users = kk.data
+        this.banners = kk.data
+        
     },
     methods: {
         change1(event) {
