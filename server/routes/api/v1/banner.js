@@ -12,7 +12,7 @@ router.post(
   bannerController.resizeBannerPhoto,
   bannerController.banner_create_image
 );
-router.get("/show", bannerController.banner_list);
+router.get("/show/:type", bannerController.banner_list);
 // router.get('')
 
 
