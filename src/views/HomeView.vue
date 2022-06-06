@@ -33,21 +33,21 @@
                     </div>
                     <v-divider style="width:95%; margin: auto; background-color: black; margin-bottom: 10px;"></v-divider>
                     <div style="overflow-y: scroll; ">
-                    
-                        <li v-for="(val, index) in banners" :key = "index">
 
-                            <div >
-                                <div class="pl-2 pr-2 printMe">
-                                    <v-card class="mx-auto">
-                                        <v-img :src = "prefilUrl + val.imageUrl" height="200px">
-                                        <!-- <v-img :src = '' height="200px"> -->
+                        <li v-for="(val, index) in banners" :key="index">
+
+                            <div>
+                                <div class="pl-2 pr-2 ">
+                                    <v-card class="mx-auto printMe ">
+                                        <v-img :src="prefilUrl + val.imageUrl" height="200px">
+                                            <!-- <v-img :src = '' height="200px"> -->
 
                                             <div style="position: relative; top: 70%;" class="d-flex">
                                                 <v-avatar class="ml-2" v-if="switch4">
-                                                    <img  :src= "prefilUrl + user.imageAbsolutePath"  alt="John">
+                                                    <img :src="prefilUrl + user.imageAbsolutePath" alt="John">
                                                 </v-avatar>
                                                 <v-avatar class="ml-2" v-else></v-avatar>
-                                                <div style="width: 75%; background-color: #ffffff " class="ml-2"  v-if="switch1 || switch2 || switch3">
+                                                <div style="width: 75%; background-color: #ffffff " class="ml-2" v-if="switch1 || switch2 || switch3">
                                                     <div class="pl-3 mb-0">
                                                         <p class="body-2 text-decoration-underline font-weight-black my-0" v-if="switch1">{{user.name}}</p>
                                                         <p class=" my-0" style="font-size:0.7em ;" v-if="switch2">{{user.number}}</p>
@@ -60,7 +60,7 @@
                                 </div>
                                 <!-- <WhatsappButton /> -->
                                 <div class="my-2 d-flex justify-center pb-2">
-                                    <v-btn color="success" dark  @click="takeShot">
+                                    <v-btn color="success" dark @click="takeShot(index)">
                                         Share on Whatsapp
                                         <Icon icon="mdi:whatsapp" width="25" height="25" style="padding-left: 5px;" />
                                     </v-btn>
@@ -78,16 +78,17 @@
 </template>
 
 <script>
-
 import '../style/style.css'
 import WhatsappButton from '../components/WhatsappButton.vue'
 import html2canvas from "html2canvas";
 import toDataUrl from "image-to-base64/browser";
-
+import {
+    Icon
+} from '@iconify/vue2';
 
 export default {
     name: 'HomeView',
-    
+
     data: () => ({
         drawer: null,
         switch1: true,
@@ -95,11 +96,12 @@ export default {
         switch3: true,
         switch4: true,
         banners: null,
-        prefilUrl : "http://localhost:8008/",
+        prefilUrl: "http://localhost:8008/",
         bannerName: null,
         user: null,
     }),
     components: {
+        Icon,
         WhatsappButton
     },
 
@@ -111,38 +113,53 @@ export default {
         const response = await fetch(`http://localhost:8008/api/v1/banner/show/${this.bannerName}`)
         let kk = await response.json()
         this.banners = kk.data
-        
+
     },
     methods: {
-        takeShot: async function () {
-            let div = document.getElementsByClassName("printMe")[0];
-            let ImageToUrl = await html2canvas(div,{
+        takeShot: async function (index) {
+            console.log(index)
+            let div = document.getElementsByClassName("printMe")[index];
+            let ImageToUrl = await html2canvas(div, {
                 // allowTaint:true,
-                logging: true, 
+                logging: true,
                 letterRendering: 1,
-                useCORS:true
+                useCORS: true
             });
             let image = ImageToUrl.toDataURL("image/png").replace(
                 "image/png",
                 "image/octet-stream"
             );
-            console.log(image);
-            window.location.href = image;
-
-
-        
+            // window.location.href = image;
+            // let a = document.createElement("a"); //Create <a>
+            // a.href = "data:image/png;base64" + image; //Image Base64 Goes her
+            // a.download = "Image.png"; //File name Here
+            // a.click();
+            const fileArray = [ImageToUrl]
+            if (navigator.canShare && navigator.canShare({
+                    files: fileArray
+                })) {
+                navigator.share({
+                        files: fileArray,
+                        title: 'Pictures',
+                        text: 'Our Pictures.',
+                    })
+                    .then(() => console.log('Share was successful.'))
+                    .catch((error) => console.log('Sharing failed', error));
+            } else {
+                console.log(`Your system doesn't support sharing files.`);
+            }
         },
-          convertImageToDataUrl:function (url) {
-                console.log(url);
+        convertImageToDataUrl: function (url) {
+            console.log(url);
             toDataUrl(url).then((response) => {
                 let appendToImage = "data:image/jpeg;base64,";
                 let imageToDataUrl = appendToImage + response;
-                
+
                 console.log(imageToDataUrl);
 
                 return imageToDataUrl;
             });
-            },
+        },
 
         change1(event) {
             !this.switch1
