@@ -129,17 +129,15 @@ export default {
                 "image/png",
                 "image/octet-stream"
             );
-            // window.location.href = image;
-            // let a = document.createElement("a"); //Create <a>
-            // a.href = "data:image/png;base64" + image; //Image Base64 Goes her
-            // a.download = "Image.png"; //File name Here
-            // a.click();
-            const fileArray = [ImageToUrl]
+
+            const blob = await (await fetch(image)).blob();
+            const fileArray = new File([blob], 'mohit.jpeg', {type: "image/jpeg"});
+
             if (navigator.canShare && navigator.canShare({
-                    files: fileArray
-                })) {
+                    files: [fileArray]
+                })){
                 navigator.share({
-                        files: fileArray,
+                        files : [fileArray],
                         title: 'Pictures',
                         text: 'Our Pictures.',
                     })
