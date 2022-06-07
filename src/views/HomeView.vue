@@ -131,13 +131,15 @@ export default {
             );
 
             const blob = await (await fetch(image)).blob();
-            const fileArray = new File([blob], 'mohit.jpeg', {type: "image/jpeg"});
+            const fileArray = new File([blob], 'Banner.jpeg', {
+                type: "image/jpeg"
+            });
 
             if (navigator.canShare && navigator.canShare({
                     files: [fileArray]
-                })){
+                })) {
                 navigator.share({
-                        files : [fileArray],
+                        files: [fileArray],
                         title: 'Pictures',
                         text: 'Our Pictures.',
                     })
