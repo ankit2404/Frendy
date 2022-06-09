@@ -35,7 +35,26 @@ const bannerSchema = new mongoose.Schema({
         type: String,
         default:null,
         // required:true,
-    }
+    },
+    textPosition_horizontal : {
+        type:String,
+        enum:['right','left'],
+        default: 'right'
+    },
+    textPosition_h_digit : {
+        type:Number,
+        default:10
+    },
+    textPosition_vertical:{
+        type:String,
+        enum:['top','bottom'],
+        default: 'top'
+    },
+    textPosition_v_digit : {
+        type:Number,
+        default:10
+    },
+
     
 
  
