@@ -15,6 +15,7 @@
 
         <v-navigation-drawer v-model="drawer" fixed temporary>
         </v-navigation-drawer>
+        <!-- <AppNavigation></AppNavigation> -->
         <v-row justify="center" style="margin: 0;  width: 100%;">
             <v-expansion-panels accordion>
                 <v-expansion-panel style="position: relative;">
@@ -98,6 +99,7 @@
 
 <script>
 import '../style/style.css'
+import AppNavigation from '../components/AppNavigation.vue';
 export default {
     name: 'Creative',
     data: () => ({
@@ -107,6 +109,9 @@ export default {
         switch3: true,
         switch4: true,
     }),
+     components: {
+        AppNavigation
+    },
 
 }
 </script>
