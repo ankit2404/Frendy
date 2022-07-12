@@ -22,7 +22,7 @@
                     <v-divider style="width:95%; margin: auto; background-color: black; margin-bottom: 10px;"></v-divider>
                     <div style="overflow-y: scroll; ">
                         <li v-for="(val, index) in data" :key="index">
-                            <div @click="popupHandler">
+                            <div @click="popupHandler(index)">
                                 <div class="pl-2 pr-2 ">
                                     <v-card class="mx-auto printMe ">
                                         <v-img :src="val.imageAbsolutePath" :height=val.bannerImageHeight :width="val.bannerImageWidth">
@@ -53,10 +53,7 @@
                                         <Icon icon="mdi:whatsapp" width="25" height="25" style="padding-left: 5px;" />
                                     </v-btn>
                                 </div> -->
-                                <!-- <div v-if="visible" @click="confirm(`${title}:confirmed`)">
-                                    {{ title }}
-                                </div> -->
-                                <Popup v-if="popupSwitch" :image = "val.imageAbsolutePath" ></Popup>
+                                <Popup v-if="popupSwitch && showImage != null" :image="showImage"></Popup>
                             </div>
 
                         </li>
@@ -95,6 +92,7 @@ export default {
         user: null,
         temp: "px",
         popupSwitch: false,
+        showImage: null,
         data: [{
                 "imageAbsolutePath": "https://cdn2-ahmedabad-production.frendy.in/creativeBanner/20220620_221835_0000.jpg",
                 "id": 152,
@@ -181,7 +179,7 @@ export default {
         AppNaviagtion,
         Popup
     },
-    
+
     async mounted() {
         this.bannerName = this.$route.params.id
         const res = await fetch('http://localhost:8008/api/v1/user/get-user')
@@ -192,9 +190,25 @@ export default {
         this.banners = kk.data
     },
     props: {
-    image: String
-  },
+        image: Object
+    },
     methods: {
+        makeImage: async function (index) {
+            let div = document.getElementsByClassName("printMe")[index];
+            let ImageToUrl = await html2canvas(div, {
+                // allowTaint:true,
+                logging: true,
+                letterRendering: 1,
+                useCORS: true
+            });
+            let image = ImageToUrl.toDataURL("image/png").replace(
+                "image/png",
+                "image/octet-stream"
+            );
+
+            const blob = await (await fetch(image)).blob();
+            return blob;
+        },
         takeShot: async function (index) {
             let div = document.getElementsByClassName("printMe")[index];
             let ImageToUrl = await html2canvas(div, {
@@ -248,14 +262,33 @@ export default {
         change4(event) {
             !this.switch4
         },
-        popupHandler(event){
-            if(this.popupSwitch){
+        popupHandler(index) {
+            if (this.popupSwitch) {
                 this.popupSwitch = false;
-            }else{
-                this.popupSwitch = true
+                this.makeImage = null;
+            } else {
+                this.popupSwitch = true;
+                const makeImage = async function (index) {
+                    let div = document.getElementsByClassName("printMe")[index];
+                    let ImageToUrl = await html2canvas(div, {
+                        logging: true,
+                        letterRendering: 1,
+                        // useCORS: true
+                    });
+                    let image = ImageToUrl.toDataURL("image/png").replace(
+                        "image/png",
+                        "image/octet-stream"
+                    );
+                    // this.showImage = image;
+                    
+                    console.log(image)
+                    return image;
+                }
+                this.showImage = makeImage(index)
+                // console.log(makeImage(index))
             }
         }
     },
-   
+
 }
 </script>

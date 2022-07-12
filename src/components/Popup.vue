@@ -2,7 +2,9 @@
 <div  id="popup">
     <div id="main">
         <div id="img-cont">
-            <img :src= "image" alt="img">
+            <!-- <p>{{image.data}}</p> -->
+            console.log({{image}});
+            <img :src="`data:image/png;base64,${image}`" alt="img">
         </div>
         <div id="btn-cont">
             <div>Share on whatsapp</div>
@@ -27,7 +29,7 @@ export default {
     }),
 
     props:{
-    image:String
+    image:Object
   },
     components: {
         Icon,
