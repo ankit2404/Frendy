@@ -3,8 +3,7 @@
     <div id="main">
         <div id="img-cont">
             <!-- <p>{{image.data}}</p> -->
-            console.log({{image}});
-            <img :src="`data:image/png;base64,${image}`" alt="img">
+            <img :src="image" alt="img">
         </div>
         <div id="btn-cont">
             <div>Share on whatsapp</div>

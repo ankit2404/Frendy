@@ -21,11 +21,11 @@
                     </div>
                     <v-divider style="width:95%; margin: auto; background-color: black; margin-bottom: 10px;"></v-divider>
                     <div style="overflow-y: scroll; ">
-                        <li v-for="(val, index) in data" :key="index">
+                        <li v-for="(val, index) in data" :key="index" class="mb-5" style = "max-width: 95%; margin: auto;">
                             <div @click="popupHandler(index)">
                                 <div class="pl-2 pr-2 ">
-                                    <v-card class="mx-auto printMe ">
-                                        <v-img :src="val.imageAbsolutePath" :height=val.bannerImageHeight :width="val.bannerImageWidth">
+                                    <v-card class="mx-auto printMe " >
+                                        <v-img :src="val.imageAbsolutePath" :height=val.bannerImageHeight :width="val.bannerImageWidth" >
                                             <div>
                                                 <v-avatar v-if="switch4" :style="{
                                                              position: 'absolute', top: val.displayField.isProfileImageShown.FromTop + temp, left: val.displayField.isProfileImageShown.FromLeft + temp,color: val.displayField.isProfileImageShown.TextColor,
@@ -53,7 +53,7 @@
                                         <Icon icon="mdi:whatsapp" width="25" height="25" style="padding-left: 5px;" />
                                     </v-btn>
                                 </div> -->
-                                <Popup v-if="popupSwitch && showImage != null" :image="showImage"></Popup>
+                                <Popup v-if="popupSwitch && showImage != null" :image="val.imageAbsolutePath"></Popup>
                             </div>
 
                         </li>
